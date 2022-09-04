@@ -13,7 +13,4 @@ FROM builder as build
 COPY . .
 WORKDIR ./
 
-ENV MODEL_BUCKET=""
-ENV MODEL_KEY=""
-
 CMD ["uvicorn", "main:app","--host","0.0.0.0","--port","8080"]

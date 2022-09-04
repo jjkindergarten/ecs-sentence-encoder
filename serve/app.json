@@ -1,0 +1,19 @@
+[{
+  "essential": true,
+  "image": "610775558403.dkr.ecr.us-east-1.amazonaws.com/ml-demo:latest",
+  "memory": 2048,
+  "memoryReservation": 1048,
+  "name": "${name}",
+  "portMappings": [{
+    "containerPort": 8080,
+    "hostPort": 0
+  }],
+  "logConfiguration": {
+    "logDriver": "awslogs",
+    "options": {
+      "awslogs-group": "${log_group}",
+      "awslogs-region": "us-east-1",
+      "awslogs-stream-prefix": "my-model/final-model.pt"
+    }
+  }
+}]
