@@ -2,3 +2,4 @@ fastapi==0.61.1
 uvicorn==0.12.2
 protobuf==3.9.2
 boto3
+tensorflow==2.9.2

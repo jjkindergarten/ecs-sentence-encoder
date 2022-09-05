@@ -16,6 +16,7 @@ resource "aws_ecs_task_definition" "ecs-task-definition" {
   )
   family                = "${var.name_prefix}-ecs-task"
   execution_role_arn       = aws_iam_role.ecsTaskExecutionRole.arn
+  task_role_arn = aws_iam_role.ecsTaskExecutionRole.arn
   requires_compatibilities = ["FARGATE"]
   network_mode             = "awsvpc"
   memory                   = 4096         # Specifying the memory our container requires

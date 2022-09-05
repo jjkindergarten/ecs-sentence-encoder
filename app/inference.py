@@ -29,18 +29,18 @@ def download_directory_from_s3(bucket_name, remote_directory_name):
 download_directory_from_s3(bucket_name, model_folder_name)
 
 
-def load_model():
+def load_model(model_folder_name):
     encoder = tf.keras.models.load_model(model_folder_name)
     return encoder
 
 
-encoder = load_model()
+encoder = load_model(model_folder_name)
 
 
 @router.post("/sentence_encoder")
 def sentence_encoder(item: ItemList):
     try:
-        score_list = encoder(item.title_list)
+        score_list = encoder(item.title_list).numpy().tolist()
         return [{
             title: score
         } for title, score in zip(item.title_list, score_list)]

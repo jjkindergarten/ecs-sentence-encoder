@@ -1,7 +1,7 @@
 [
   {
   "essential": true,
-  "image": "610775558403.dkr.ecr.us-east-1.amazonaws.com/ml-demo:7",
+  "image": "610775558403.dkr.ecr.us-east-1.amazonaws.com/ml-demo:9",
   "memory": 4096,
   "memoryReservation": 4096,
   "name": "${name_prefix}-container",
