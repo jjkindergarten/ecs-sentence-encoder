@@ -5,12 +5,12 @@ import datetime
 import logging
 import os
 
-from inference import sentence_encoder
+import inference
 
 # Init
 logger = logging.getLogger(__name__)
 app = FastAPI()
-app.include_router(sentence_encoder.router)
+app.include_router(inference.router)
 
 # Logging Setting
 LOG_LEVEL = logging.getLevelName(os.environ.get("LOG_LEVEL", "DEBUG"))

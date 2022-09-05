@@ -2,10 +2,12 @@
 # match the driver installed on the local system.
 # Download the driver from: https://developer.nvidia.com/cuda-downloads
 
-FROM 763104351884.dkr.ecr.us-east-1.amazonaws.com/tensorflow-inference:2.6.0-cpu-py38-ubuntu20.04 as builder
+FROM ubuntu:20.04 as builder
 
 RUN apt-get update
-RUN apt-get install python3.8 -y
+RUN apt-get install python3.8 python3-pip -y
+RUN pip install --upgrade pip
+RUN pip install tensorflow==2.6.0
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
